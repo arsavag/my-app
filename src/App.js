@@ -4,15 +4,17 @@ import MyEditor from './components/Editor'
 import EditorPreview from './components/EditorPreview'
 
 function App() {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState();
   
   return (
     <div className="App">
       <div className="container">
-        <MyEditor onChange={(value) => {
-          setValue(value)
-          console.log(value)
-        }}/>
+        <MyEditor 
+          defaultValue={value} 
+          onChange={(value) => {
+            setValue(value)
+          }}
+        />
         <EditorPreview 
           data={value}
         />
